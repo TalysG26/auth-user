@@ -1,0 +1,17 @@
+- Users {Module}
+--- getProfile
+
+- Posts {Module}
+--- getPosts
+---getPostContent
+
+comando ultilizado ´para criar um arquivo 
+
+nest g nome pasta que quer colocar
+
+ex:nest g service auth
+
+comando ultilizado para criar um module
+nest g module nome
+
+ex:nest g module auth     
