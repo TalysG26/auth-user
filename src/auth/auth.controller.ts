@@ -1,7 +1,6 @@
-import { Controller, Post, Body, Get,Request, UseGuards} from '@nestjs/common';
+import { Controller, Post, Body, Get,Request,UseGuards, Delete} from '@nestjs/common';
 import * as auth from './dtos/auth';
 import { AuthService } from './auth.service';
-import { request } from 'http';
 import { AuthGuard } from './auth.guard';
 
 //POST /auth/login -- > {email, password}
@@ -32,4 +31,9 @@ export class AuthController {
         return request.user
     }       
 
+   @UseGuards(AuthGuard)
+@Delete("delete")
+async delete(@Request() request) {
+  return this.authService.delete(request.user.id)
+}
 }
